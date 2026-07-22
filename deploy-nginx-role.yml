@@ -1,0 +1,6 @@
+---
+- name: Deploy nginx via role
+  hosts: fedora_laptop
+  become: true
+  roles:
+    - podman_nginx

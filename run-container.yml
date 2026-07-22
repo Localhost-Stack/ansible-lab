@@ -1,0 +1,16 @@
+---
+- name: Run a test container on Fedora Laptop
+  hosts: fedora_laptop
+  become: true
+  vars_files:
+    - group_vars_fedora.yml
+
+  tasks:
+    - name: Run nginx container
+      containers.podman.podman_container:
+        name: "{{ container_name }}"
+        image: "{{ container_image }}"
+        state: started
+        ports:
+          - "{{ container_host_port }}:{{ container_internal_port }}"
+  

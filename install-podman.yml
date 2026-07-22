@@ -1,0 +1,10 @@
+---
+- name: Install Podman on Fedora Laptop
+  hosts: fedora_laptop
+  become: true
+
+  tasks:
+    - name : Install podman package
+      dnf:
+        name: podman
+        state: present

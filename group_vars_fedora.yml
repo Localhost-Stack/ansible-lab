@@ -1,0 +1,5 @@
+container_name: test-nginx
+container_image: docker.io/library/nginx:latest
+container_host_port: 8080
+container_internal_port: 80
+
